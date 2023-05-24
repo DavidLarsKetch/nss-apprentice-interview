@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Widgets'R'Us</title>
+    <meta name="description">We've got the widgets!</meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body class="bg-stone-800">
+    <h1 class="text-stone-100 ml-8 mt-4 text-6xl">Widgets'R'Us</h1>
+    <div id="container" class="w-5/6 rounded-lg h-full mt-8 py-8 px-16 mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div class="card card-col">
+        <p id="clock" class="m-auto">
+        </p>
+        <div class="flex space-x-4 m-auto text-xl text-stone-500">
+          <p>Last Updated:</p>
+          <p id="lastUpdated"></p>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="text-2xl shrink">Order Status</h2>
+        <div class="grid text-xl">
+          <div class="flex space-x-4 items-center text-stone-500">
+            <p>Pending:</p>
+            <p id="pendingOrders"></p>
+          </div>
+          <div class="flex text-stone-500">
+            <p>Completed: </p>
+            <p class="completed-orders"></p>
+          </div>
+        </div>
+      </div>
+      <div class="card flex-col">
+        <div class="text-stone-700 mb-4">
+        <h2>Issue spotter</h2>
+        <p>Is there a problem in the warehouse we ought to know about?</p>
+        <p>Submit any issue you see here. Please describe the problem and any documentary evidence (photos).</p>
+        </div>
+        <form action="http://localhost:8181/submit" method="post">
+        <div class="grid">
+        <label for="name">First and Last Name</label>
+        <input name="name" type="text" required/>
+        </div>
+        <div class="grid">
+        <label for="email">Email</label>
+        <input name="email" type="email" required/>
+        </div>
+        <div class="grid">
+        <label for="dept">Department</label>
+        <input name="dept" type="text" required/>
+        </div>
+        <div class="grid">
+        <label for="issue">Describe your issue</label>
+        <textarea name="issue" required rows="8"></textarea>  
+        </div>
+        <div class="grid">
+        <label for="img">Evidence</label>
+        <input name="img" type="file" accept=".jpeg, .jpg"/>
+        </div>
+        <div class="grid">
+        <input type="submit" value="Submit" class="absolute bg-sky-400 mx-auto py-1 px-2 border-2 border-black rounded-md" />
+        </div>
+        </form>
+      </div>
+      <div class="card">
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="index.js"></script>
+  </footer>
+</html>
